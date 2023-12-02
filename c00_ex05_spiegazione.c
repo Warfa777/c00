@@ -4,7 +4,7 @@
 
 void ft_putchar(char c)
 {
-    write(1, &c, 3);
+    write(1, &c, 1);
 }
         
         /*  dichiaro ft_print_comb per stampare

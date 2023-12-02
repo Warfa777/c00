@@ -61,7 +61,7 @@ void ft_print_comb(void)
     }
 }
 
-int main()  // creo il programma per eseguire ft_print_void
+int main()  // creo il programma per eseguire ft_print_comb()
 {
     ft_print_comb();    // chiamata alla funzione
     return 0;

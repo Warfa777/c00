@@ -6,7 +6,7 @@
 /*   By: sliberat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 20:06:31 by sliberat          #+#    #+#             */
-/*   Updated: 2023/11/30 20:36:30 by sliberat         ###   ########.fr       */
+/*   Updated: 2023/12/03 18:12:32 by sliberat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_print_reverse_alphabet(void)
 	char	i;
 
 	i = 'z';
-	while (i > 'a')
+	while (i >= 'a')
 	{
 		ft_putchar(i);
 		i--;

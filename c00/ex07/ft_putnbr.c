@@ -1,30 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_putnum.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sliberat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/30 19:41:53 by sliberat          #+#    #+#             */
-/*   Updated: 2023/12/03 18:14:02 by sliberat         ###   ########.fr       */
+/*   Created: 2023/12/03 17:54:19 by sliberat          #+#    #+#             */
+/*   Updated: 2023/12/04 20:08:03 by sliberat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_putnbr(int nb);
+
+void	special_cases(int nb)
 {
-	write(1, &c, 1);
+	if (nb == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+	}
+	else if (nb == 0)
+	{
+		write(1, "0", 1);
+	}
+	else if (nb < 0)
+	{
+		write(1, "-", 1);
+		nb = -nb;
+		ft_putnbr(nb);
+	}
 }
 
-void	ft_print_alphabet(void)
+void	ft_putnbr(int nb)
 {
-	char	i;
+	int		i;
+	char	numero[12];
 
-	i = 'a';
-	while (i <= 'z')
+	special_cases(nb);
+	i = 0;
+	while (nb > 0)
 	{
-		ft_putchar(i);
+		numero[i] = '0' + (nb % 10);
+		nb /= 10;
 		i++;
+	}
+	while (i > 0)
+	{
+		i--;
+		write(1, &numero[i], 1);
 	}
 }
